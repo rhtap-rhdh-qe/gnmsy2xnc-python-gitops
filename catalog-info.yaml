@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gnmsy2xnc-python-gitops
+  description: This is GitOps manifest for gnmsy2xnc-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=gnmsy2xnc-python
+    backstage.io/kubernetes-id: gnmsy2xnc-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: gnmsy2xnc-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gnmsy2xnc-python
